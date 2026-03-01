@@ -1,3 +1,12 @@
 body {
     padding-top: 5rem;
 }
+
+form{
+    display: grid;
+    grid-template-columns: 30%;
+}
+
+label{
+    
+}

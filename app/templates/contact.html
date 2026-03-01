@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Contact Form</h1>
+<hr>
+<p id ="instructions">Fill in the Form to contact the site owner</p>
+<Form action="/process" method="post">
+    {{ form.csrf_token }}
+
+    {{ form.name.label }}
+    <p class="fdisc">Please enter your full name</p>
+    {{ form.name }}
+    <br>
+
+    {{ form.email.label }}
+    <p class="fdisc">Please enter your e-mail addess</p>
+    {{ form.email}}
+    <br>
+
+    {{form.subject.label}}
+    <p class="fdisc">Please enter the subject for your message</p>
+    {{form.subject}}
+    <br>
+
+    {{form.message.label}}
+    <p class="fdisc">please enter the message you would like to send</p>
+    {{form.message}}
+    <br>
+
+   
+    <button>send</button>
+
+</Form>
+{%endblock%} 
+
+
+<!-----------------------------------Code Dump--------------------------------------->
+<!--
+    <div>
+        <label for="name">Name <span>(Required)</span></label>
+        <p class="fdisc">Please enter your full name</p>
+        <input type="text" id="name" name="name"/>
+    </div>
+    <div>
+        <label for="mail">E-mail <span>(Required)</span></label>
+        <p class="fdisc">Please enter your e-mail addess</p>
+        <input type="email" id="mail" name="e-mail" />
+    </div>
+    
+    <div>
+        <label for="sub">Subject <span>(Required)</span></label>
+        <p class="fdisc">Please enter the subject for your message</p>
+        <input type="subject" id="sub" name="subject" />
+    </div>
+    
+    <div>
+        <label for="msg">Message: <span>(Required)</span></label>
+        <p class="fdisc">please enter the message you would like to send</p>
+        <textarea id="msg" name="message"></textarea>
+    </div>
+    -->
+
+
+    <!--
+
+    <p class="fname">Name <span>(Required)</span></p>
+    <p class="fdisc">Please enter your full name</p>
+    <textarea></textarea>
+
+    <p class="fname">E-mail <span>(Required)</span></p>
+    <p class="fdisc">Please enter your e-mail addess</p>
+    <textarea></textarea>
+
+    <p class="fname">Subject <span>(Required)</span></p>
+    <p class="fdisc">Please enter the subjext of your email</p>
+    <textarea></textarea>
+
+    <p class="fname">Message <span>(Required)</span></p>
+    <p class="fdisc">please enter the message you would like to send</p>
+    <textarea></textarea>
+    <br>
+    
+    -->

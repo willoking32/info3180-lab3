@@ -1,7 +1,20 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
 
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import InputRequired
+from app.forms import ContactForm
+from app import mail
+from flask_mail import Message 
 
+"""
+class MyForm(FlaskForm):
+    name = StringField('Name',validators=[InputRequired()])
+    email = StringField('E-mail',validators=[InputRequired()])
+    subject = StringField('Subject',validators=[InputRequired()])
+    message = StringField('Message',validators=[InputRequired()])
+"""
 ###
 # Routing for your application.
 ###
@@ -17,6 +30,20 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+@app.route("/contact")#, methods=['POST'])
+def contact():
+    form =ContactForm()
+    if form.validate_on_submit():
+        name= form.name.data
+        email = form.email.data
+        subject = form.subject.data
+        message = form.message.data
+        flash("file uploaded")
+
+        msg= Message(sender=(name,email),recipients=["to@example.com"])
+        msg.body= message
+        mail.send(msg)
+    return render_template('contact.html',form=form)
 
 ###
 # The functions below should be applicable to all Flask apps.
