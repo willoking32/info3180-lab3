@@ -14,21 +14,21 @@
 
     {{ form.email.label }}
     <p class="fdisc">Please enter your e-mail addess</p>
-    {{ form.email}}
+    {{ form.email(class_="tarea") }}
     <br>
 
     {{form.subject.label}}
     <p class="fdisc">Please enter the subject for your message</p>
-    {{form.subject}}
+    {{form.subject(class_="tarea") }}
     <br>
 
     {{form.message.label}}
     <p class="fdisc">please enter the message you would like to send</p>
-    {{form.message}}
+    {{form.message(class_="tarea", id="message") }}
     <br>
 
    
-    <button type ="submit">send</button>
+    <button type ="submit" class="submit">send</button>
 
 </Form>
 {%endblock%} 

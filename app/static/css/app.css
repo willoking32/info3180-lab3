@@ -13,5 +13,23 @@ label{
 }
 
 .tarea{
-    width: 10px;
+    width: 10rem;
+}
+
+#message{
+    width: 25rem;
+    height: 100px;
+    text-align: left;
+    overflow-wrap: initial;
+    font-weight: 400;
+    font-size: 16px;
+    word-break: keep-all;
+
+}
+
+.submit{
+    background-color: blue;
+    color: aliceblue;
+    width: 15rem;
+    border-radius: 10px;
 }
