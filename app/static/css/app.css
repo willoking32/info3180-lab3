@@ -8,5 +8,10 @@ form{
 }
 
 label{
+    font-weight: bold;
     
+}
+
+.tarea{
+    width: 10px;
 }

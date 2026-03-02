@@ -4,12 +4,12 @@
 <h1>Contact Form</h1>
 <hr>
 <p id ="instructions">Fill in the Form to contact the site owner</p>
-<Form action="/process" method="post">
+<Form method="post">
     {{ form.csrf_token }}
 
     {{ form.name.label }}
     <p class="fdisc">Please enter your full name</p>
-    {{ form.name }}
+    {{ form.name(class_="tarea") }}
     <br>
 
     {{ form.email.label }}
@@ -28,7 +28,7 @@
     <br>
 
    
-    <button>send</button>
+    <button type ="submit">send</button>
 
 </Form>
 {%endblock%} 
